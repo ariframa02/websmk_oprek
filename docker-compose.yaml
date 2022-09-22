@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+
+  web-smk:
+    build: .
+    container_name: oprek_websmk
+    hostname: websmk
+    restart: unless-stopped
+    ports: 
+      - 8080:80
+    networks: 
+      - oprek_net
+    volumes: 
+      - ${PWD}:/usr/share/nginx/html
+
+networks:
+  oprek_net:
